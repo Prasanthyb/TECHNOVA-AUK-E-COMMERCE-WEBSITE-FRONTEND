@@ -13,7 +13,7 @@ const AppContext = createContext();
 
 //~~~~~~~~~~  API endpoint for fetching products
 
-const API = "https://api.pujakaitem.com/api/products";
+const API = "http://localhost:4000/products";
 
 //~~~~~~~~~~  Initial state for the application
 
@@ -43,7 +43,10 @@ const AppProvider = ({ children }) => {
       //~~~~~~~~~~  Making a GET request to the specified URL
 
       const res = await axios.get(url);
-      const products = await res.data;
+      const responseData = res.data;
+      const products = responseData.data;
+      console.log(products);
+     
 
       //~~~~~~~~~~  Dispatching action to set the fetched data in the state
 
@@ -65,7 +68,9 @@ const AppProvider = ({ children }) => {
       //~~~~~~~~~~  Making a GET request to the specified URL for a single product
 
       const res = await axios.get(url);
-      const singleProduct = await res.data;
+      const responseData = res.data;
+      const singleProduct = responseData.data[0];
+      
 
       //~~~~~~~~~~  Dispatching action to set the single product in the state
 
