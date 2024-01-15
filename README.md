@@ -16,6 +16,8 @@
 
 ##Styled Components
 
+# FormatPrice
+
 ##Axios
 
 ###Pages-Home,About ,Products ,SingleProduct , Cart, Contact
